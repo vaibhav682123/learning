@@ -42,10 +42,13 @@ function App() {
   <div className="container">
     <Navbar mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert} />
+        {/* <Textform showAlert={showAlert} heading="Email Entering" mode={mode} /> */}
     <Routes>
-      <Route  exact path="/about" element={<About />} />
-      <Route exact path="/" element={<Textform showAlert={showAlert} heading="Email Entering" mode={mode} />} />
-    </Routes>
+      <Route  exact path="/about" element={<About mode={mode} />} />
+      <Route  exact path="/" element={ <Textform showAlert={showAlert} heading="Email Entering" mode={mode} />} />
+
+  
+     </Routes>
   </div>
 </Router>
 

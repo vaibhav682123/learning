@@ -27,7 +27,7 @@ export default function TextForm(props) {
     <div>
   <div className="form-group">
     <label for="exampleFormControlInput1">{props.heading}</label>
-    <input type="email" className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor:props.mode==='dark'?'grey':'white'}} id="exampleFormControlInput1" placeholder="name@example.com" />
+    <input type="email" className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor:props.mode==='dark'?'green':'white'}} id="exampleFormControlInput1" placeholder="name@example.com" />
   </div>
   <button type="submit" className="btn btn-primary mx-1" onClick={handleUpClick}>Convert To Upper Case</button>
   <button type="submit" className="btn btn-primary" onClick={handleLoClick}>Convert To Lower Case</button>
@@ -35,8 +35,8 @@ export default function TextForm(props) {
     </div>
     <div className="container my-3">
       <h1>Your text summary</h1>
-      <p>{text.split(" ").length} words and {text.length} characters</p>
-      <p>{0.008 *text.split(" ").length } Minutes read </p>
+      <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+      <p>{0.008 *text.split(" ").filter((element)=>{return element.length!==0}).length } Minutes read </p>
       <h3>Preview</h3>
       <p>{text.length>0?text:"Enter something to preview"}</p>
     </div>
